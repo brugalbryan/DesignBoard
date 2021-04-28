@@ -5,7 +5,6 @@ function Card(props){
     const dragStart = e => {
 
         e.stopPropagation();
-
         console.log("dragStart")
         console.log( "Color dragged is" , e.currentTarget.style.backgroundColor); //prints color of card dragged
         props.changeColor(e.currentTarget.style.backgroundColor)
