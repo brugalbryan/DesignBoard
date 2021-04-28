@@ -7,7 +7,6 @@ function Board(props){
         props.changeColorOfBox(e.target.id)
         console.log("Color is Dropped on" , e.target.id)
     }
-     
     const dragOver = e => {
         e.preventDefault();
     }
