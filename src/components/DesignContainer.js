@@ -51,7 +51,6 @@ class DesignContainer extends React.Component {
         }
     }
 
-  
   render(){
     return (
         <div>
