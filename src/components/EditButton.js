@@ -2,7 +2,6 @@
 function EditButton(props){
 
     return(
-
         <div>
             <br/>
             <br/>
