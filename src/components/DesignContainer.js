@@ -2,6 +2,7 @@ import React from 'react';
 import Board from './Board';
 import Card from './Card';
 import EditButton from './EditButton';
+import ClearButton from './ClearButton';
 
 
 class DesignContainer extends React.Component {
@@ -12,6 +13,7 @@ class DesignContainer extends React.Component {
         this.state = {
             canEdit: true,
             color: "",
+            draggable: true,
             colorOfBox1: "transparent",
             colorOfBox2: "transparent",
             colorOfBox3: "transparent",
@@ -24,6 +26,7 @@ class DesignContainer extends React.Component {
     handleEdit = (event) => {
       if(this.state.canEdit === false){
         this.setState({canEdit: true}) 
+ 
         this.setState({colorOfButton:"lime"})
         }else{
             this.setState({canEdit: false})
@@ -31,6 +34,16 @@ class DesignContainer extends React.Component {
         }
     
     }   
+
+
+    clearBoard = (event) => {
+        if(this.state.canEdit === true){
+            this.setState({colorOfBox1: "transparent"})
+            this.setState({colorOfBox2: "transparent"})
+            this.setState({colorOfBox3: "transparent"})
+            this.setState({colorOfBox4: "transparent"})
+        }
+    }
 
 
     changeColor= (newcolor) => {
@@ -61,15 +74,16 @@ class DesignContainer extends React.Component {
                 <br></br>
                 <div className ="leftContainer">
                     <div className = "colorContainer">
-                        <Card id = "color1" className = "card" draggable = "true" color = "purple" changeColor = {this.changeColor}> <p>Color 1</p></Card>
-                        <Card id = "color2" className = "card" draggable = "true" color = "red" changeColor = {this.changeColor}> <p>Color 2</p></Card>
-                        <Card id = "color3" className = "card" draggable = "true" color = "lime" changeColor = {this.changeColor}> <p>Color 3</p></Card>
-                        <Card id = "color4" className = "card" draggable = "true" color = "aqua" changeColor = {this.changeColor}> <p>Color 4</p></Card>
-                        <Card id = "color5" className = "card" draggable = "true" color = "blue" changeColor = {this.changeColor}> <p>Color 5</p></Card>
-                        <Card id = "color6" className = "card" draggable = "true" color = "yellow" changeColor = {this.changeColor}> <p>Color 6</p></Card>
-                        <Card id = "color7" className = "card" draggable = "true" color = "green" changeColor = {this.changeColor}> <p>Color 7</p></Card>
-                        <Card id = "color8" className = "card" draggable = "true" color = "orange" changeColor = {this.changeColor}> <p>Color 8</p></Card>
+                        <Card id = "color1" className = "card" draggable = {this.state.draggable} color = "purple" changeColor = {this.changeColor}> <p>Color 1</p></Card>
+                        <Card id = "color2" className = "card" draggable = {this.state.draggable} color = "red" changeColor = {this.changeColor}> <p>Color 2</p></Card>
+                        <Card id = "color3" className = "card" draggable = {this.state.draggable} color = "lime" changeColor = {this.changeColor}> <p>Color 3</p></Card>
+                        <Card id = "color4" className = "card" draggable = {this.state.draggable} color = "aqua" changeColor = {this.changeColor}> <p>Color 4</p></Card>
+                        <Card id = "color5" className = "card" draggable = {this.state.draggable} color = "blue" changeColor = {this.changeColor}> <p>Color 5</p></Card>
+                        <Card id = "color6" className = "card" draggable = {this.state.draggable} color = "yellow" changeColor = {this.changeColor}> <p>Color 6</p></Card>
+                        <Card id = "color7" className = "card" draggable = {this.state.draggable} color = "green" changeColor = {this.changeColor}> <p>Color 7</p></Card>
+                        <Card id = "color8" className = "card" draggable = {this.state.draggable} color = "orange" changeColor = {this.changeColor}> <p>Color 8</p></Card>
                         <EditButton canEdit = {this.handleEdit} color = {this.state.colorOfButton}/>
+                        <ClearButton clear = {this.clearBoard}/>
                     </div>
                 </div>
                 <div className = "rightContainer">
