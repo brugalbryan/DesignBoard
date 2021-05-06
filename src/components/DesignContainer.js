@@ -7,7 +7,7 @@ import ClearButton from './ClearButton';
 
 class DesignContainer extends React.Component {
     constructor(props){
-            
+
         super(props)
         // this is the initial state
         this.state = {
@@ -19,7 +19,7 @@ class DesignContainer extends React.Component {
             colorOfBox3: "transparent",
             colorOfBox4: "transparent",
             colorOfButton: "lime",
-
+ 
         }
     }
 
@@ -64,11 +64,14 @@ class DesignContainer extends React.Component {
     }
 
   render(){
+    /* 
+    When edit is enabled, these card inputs can only be dragged. The Design Container passes the edit  
+    state as props, which are then set to the draggable attribute of each card input.
+     */
     return (
         <div>
             <div className = "container"> 
-                <h1 style = {{textAlign: 'center', color: 'white'}}>
-                    {this.props.canEdit ? "DESIGN PAD (Edit Mode)" : "DESIGN PAD (View Mode)"}</h1>
+                <h1 style = {{textAlign: 'center', color: 'white'}}>DESIGN PAD</h1>
                 <br></br>
                 <br></br>
                 <br></br>

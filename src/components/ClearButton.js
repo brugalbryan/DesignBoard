@@ -2,7 +2,7 @@
 function ClearButton(props){
 
     return(
-
+ 
         <div>
             <br/>
             <br/>

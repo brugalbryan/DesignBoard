@@ -8,6 +8,6 @@ function EditButton(props){
             <button className = "button" onClick={props.canEdit}  style = {{backgroundColor: props.color}}> <b >EDIT</b>  </button>
         </div>
     )
-
+ 
 }
 export default EditButton
